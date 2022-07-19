@@ -261,7 +261,7 @@ plotting_general <- function(file_name,
       print(p)
     }
 
-  if("extc_coef" %in% diagnostics_names){
+  if((diagnostics_names == "extc_coef") | (diagnostics_names == "extc")){
 
     message("secchi")
 
@@ -278,7 +278,7 @@ plotting_general <- function(file_name,
       obs_curr <- rep(NA, length(obs_date))
     }
 
-    i <- which(diagnostics_names == "extc_coef")
+    i <- which(diagnostics_names == "extc_coef" | diagnostics_names == "extc")
     ii <- which.min(abs(depths-1.0))
     curr_var <- diagnostic_list[[i]]
 
